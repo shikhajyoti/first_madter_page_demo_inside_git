@@ -1,0 +1,149 @@
+﻿@model master_page_demo.Models.Member
+
+@{
+    ViewBag.Title = "Membership";
+}
+<style>
+
+    *[role="form"] {
+        max-width: 530px;
+        padding: 15px;
+        margin: 0 auto;
+        border-radius: 0.3em;
+        background-color: #f2f2f2;
+    }
+
+        *[role="form"] h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            color: #000000;
+            margin-top: 5%;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+</style>
+@section scripts{
+    <script>
+        function validation() {
+            var name = document.forms["regform"]["firstName"];
+            var email = document.forms["regform"]["email"];
+            if (name.value == "") {
+                window.alert("please enter your name");
+                name.focus();
+                return false;
+            }
+            if (email.value == "") {
+                window.alert("please enter your email");
+                email.focus();
+                return false;
+            }
+           
+
+            return true;
+        }
+    </script>
+
+
+    }
+    <nav class="navbar navbar-inverse">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ><h4>Game Zone</h4></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/Home/index">Home</a></li>
+                <li class="dropdown">
+                    <a href="~/Home/About_game">about</a>
+
+                </li>
+                <li><a href="~/Home/contact_game">contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="~/Home/Membership"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="~/Home/login_page"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+<body>
+    <div class="container">
+        <form method="post" class="form-horizontal" role="form" name="regform" onsubmit="return validation();">
+            <h2>Registration</h2>
+            <div class="form-group">
+                <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.first_name, new { id = "firstName", @class = "form-control", placeholder = "First Name", style = " autofocus" ,name="firstName"})
+                    @*<input type="text" class="form-control" autofocus>*@
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                <div class="col-sm-9">
+                    @* <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus>*@
+                    @Html.TextBoxFor(m => m.last_name, new { id = "lastName", @class = "form-control", placeholder = "last Name", style = " autofocus" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email* </label>
+                <div class="col-sm-9">
+                    @* <input type="email" id="email" placeholder="Email" class="form-control" name="email">*@
+                    @Html.TextBoxFor(m => m.email_id, new { id = "email", @class = "form-control", placeholder = "email", style = " autofocus",name="email" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Password*</label>
+                <div class="col-sm-9">
+                    @* <input type="password" id="password" placeholder="Password" class="form-control">*@
+                    @Html.PasswordFor(m => m.password, new { id = "pass", @class = "form-control", placeholder = "password", style = " autofocus" , name="password" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+                <div class="col-sm-9">
+                    @Html.PasswordFor(m => m.conf_password, new { id = "con", @class = "form-control", placeholder = "confarm_password", style = " autofocus" ,name="con"})
+                    @*<input type="password" id="password" placeholder="Password" class="form-control">*@
+                </div>
+            </div>
+          
+            <div class="form-group">
+                <label for="phoneNumber" class="col-sm-3 control-label">Phone number </label>
+                <div class="col-sm-9">
+                    @* <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control">*@
+                    @Html.TextBoxFor(m => m.phone_no, new { id = "phone_no", @class = "form-control", placeholder = "phone_no", style = " autofocus" })
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-3">Gender</label>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                @* <input type="radio">Female*@
+                                @Html.RadioButtonFor(m => m.gender, new { id = "femaleRadio", value = "Female" })Female
+                            </label>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="radio-inline">
+                                @Html.RadioButtonFor(m => m.gender, new { id = "maleRadio", value = "Fem" })Male
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /.form-group -->
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <span class="help-block">*Required fields</span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form> <!-- /form -->
+    </div> <!-- ./container -->
+</body>
+
+

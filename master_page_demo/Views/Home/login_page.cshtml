@@ -1,0 +1,54 @@
+﻿@model master_page_demo.Models.Member
+
+@{
+    ViewBag.Title = "login_page";
+}
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand"><h4>Game Zone</h4></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/Home/index">Home</a></li>
+            <li class="dropdown">
+                <a  href="~/Home/About_game">about </a>
+
+            </li>
+            <li><a href="~/Home/contact_game">contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="~/Home/Membership"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="~/Home/index"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container body-content">
+    <div class="container">
+        <form method="post" class="form-horizontal" role="form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Email* </label>
+                <div class="col-sm-9">
+                    @* <input type="email" id="email" placeholder="Email" class="form-control" name="email">*@
+                    @Html.TextBoxFor(m => m.email_id, new { id = "email", @class = "form-control", placeholder = "email", style = " autofocus" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">Password*</label>
+                <div class="col-sm-9">
+                    @* <input type="password" id="password" placeholder="Password" class="form-control">*@
+                    @Html.PasswordFor(m => m.password, new { id = "pass", @class = "form-control", placeholder = "password", style = " autofocus" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    
+

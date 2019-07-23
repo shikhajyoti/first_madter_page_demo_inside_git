@@ -1,0 +1,59 @@
+﻿@model master_page_demo.Models.Member
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+    
+</head>
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><h4>Game Zone</h4></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/Home/index">Home</a></li>
+            <li class="dropdown">
+                <a href="~/Home/About_game">about </a>
+
+            </li>
+            <li><a href="~/Home/contact_game">contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="~/Home/login_page"><span class="glyphicon glyphicon-user"></span> login</a></li>
+            
+        </ul>
+    </div>
+</nav>
+<div class="container body-content">
+    <div>
+        <h1> Thanku very much  for becoming a member </h1>
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr class="danger">
+                    <th>Email_Id</th>
+                    <th>First_name</th>
+                    <th>Last_name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td> <h3>  @Model.email_id</h3></td>
+                    <td>
+                        <h3>  @Model.first_name</h3>
+                    </td>
+                    <td>  <h3>  @Model.last_name</h3></td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+
+</div>

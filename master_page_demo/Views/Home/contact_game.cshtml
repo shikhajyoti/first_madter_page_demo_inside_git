@@ -1,0 +1,83 @@
+﻿@model master_page_demo.Models.Member
+
+@{
+    ViewBag.Title = "contact_game";
+}
+
+<link href="~/Views/Home/dist/themes/default-dark/style.css" rel="stylesheet" />
+
+<link href="~/Views/Home/dist/themes/default-dark/style.min.css" rel="stylesheet" />
+
+<nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand"> <h4> Game Zone</h4></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/Home/index">Home</a></li>
+            <li class="dropdown">
+                <a href="~/Home/About_game">about </a>
+              
+            </li>
+            <li><a href="~/Home/contact_game">contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="~/Home/Membership"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="~/Home/login_page"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container body-content">
+    <div class="container">
+        <h2>contact person</h2>
+
+        <div id="jstree-demo">
+            <ul>
+                <li>
+                    <h1> developer information</h1>
+                    <ul>
+                        <li> <h4> jyoti kumari</h4></li>
+                        <li> <h4> 0987654321</h4></li>
+                        <li> <h4> jyoti.kumari@nuance.com </h4></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <h1>guider information </h1>
+                    <ul>
+                <li> <h4> janardhan reddy</h4></li>
+                <li> <h4> 0123456789</h4></li>
+                <li> <h4> janaradhan.reddy@nuance.com </h4></li>
+
+            </ul></li>
+
+          
+            </ul>
+
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+
+        <script src="~/Scripts/jstree.js"></script>
+        <script src="~/Scripts/jstree.min.js"></script>
+        <script>
+
+            $('#jstree-demo').jstree({
+                'plugins': ["themes", "html_data", "ui"],
+                'core': {
+                    "themes": {
+                        'name': 'default',
+                        'variant': "medium",
+                        'responsive': false
+                    }
+
+                }
+            });
+        </script>
+    </div>
+
+
+</div>
+
+
+

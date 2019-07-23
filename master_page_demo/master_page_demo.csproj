@@ -124,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,18 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\jstree.js" />
+    <Content Include="Scripts\jstree.min.js" />
+    <Content Include="Views\Home\dist\themes\default-dark\32px.png" />
+    <Content Include="Views\Home\dist\themes\default-dark\40px.png" />
+    <Content Include="Views\Home\dist\themes\default-dark\style.css" />
+    <Content Include="Views\Home\dist\themes\default-dark\style.min.css" />
+    <Content Include="Views\Home\dist\themes\default-dark\throbber.gif" />
+    <Content Include="Views\Home\dist\themes\default\32px.png" />
+    <Content Include="Views\Home\dist\themes\default\40px.png" />
+    <Content Include="Views\Home\dist\themes\default\style.css" />
+    <Content Include="Views\Home\dist\themes\default\style.min.css" />
+    <Content Include="Views\Home\dist\themes\default\throbber.gif" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,10 +175,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_newlayout.cshtml" />
+    <Content Include="Views\Home\Membership.cshtml" />
+    <Content Include="Views\Home\Thanks.cshtml" />
+    <Content Include="Views\Home\login_page.cshtml" />
+    <Content Include="Views\Home\conformation.cshtml" />
+    <Content Include="Views\Home\game2.cshtml" />
+    <Content Include="Views\Home\About_game.cshtml" />
+    <Content Include="Views\Home\contact_game.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
